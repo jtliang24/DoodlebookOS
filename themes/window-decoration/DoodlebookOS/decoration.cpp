@@ -300,10 +300,6 @@ void Decoration::updateAnimationState()
 //________________________________________________________________
 qreal Decoration::borderSize(bool bottom, qreal scale) const
 {
-    if (style() == KDecoration3::Style::Shadow) {
-        return 0;
-    }
-
     const qreal pixelSize = KDecoration3::pixelSize(scale);
     const qreal baseSize = std::max<qreal>(pixelSize, KDecoration3::snapToPixelGrid(settings()->smallSpacing(), scale));
 
