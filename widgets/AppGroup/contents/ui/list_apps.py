@@ -19,6 +19,14 @@ def main():
         "/usr/share/applications/*.desktop",
     ]
 
+    # Include declarative application profiles on NixOS and other XDG desktops.
+    data_home = os.environ.get("XDG_DATA_HOME", os.path.expanduser("~/.local/share"))
+    data_dirs = os.environ.get("XDG_DATA_DIRS", "/usr/local/share:/usr/share")
+    paths = [os.path.join(data_home, "applications", "*.desktop")] + [
+        os.path.join(directory, "applications", "*.desktop")
+        for directory in data_dirs.split(":") if directory
+    ] + paths
+
     for pattern in paths:
         for p in glob.glob(pattern):
             cp = configparser.ConfigParser(interpolation=None)

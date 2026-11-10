@@ -26,7 +26,7 @@ elif [[ "$MODE" == "status" ]]; then
     exit 0
 fi
 
-WP_DIR="$HOME/.local/share/wallpapers/DoodlebookOS"
+WP_DIR="${DOODLEBOOKOS_WALLPAPER_DIR:-$HOME/.local/share/wallpapers/DoodlebookOS}"
 
 find_wp() {
     local prefix="$1"
@@ -76,7 +76,9 @@ else
     exit 1
 fi
 
-if [[ -x "$HOME/.local/bin/doodlebookos-topbar-color" ]]; then
+if command -v doodlebookos-topbar-color &>/dev/null; then
+    doodlebookos-topbar-color 2>/dev/null || true
+elif [[ -x "$HOME/.local/bin/doodlebookos-topbar-color" ]]; then
     "$HOME/.local/bin/doodlebookos-topbar-color" 2>/dev/null || true
 fi
 

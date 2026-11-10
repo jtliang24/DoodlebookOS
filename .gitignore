@@ -17,3 +17,7 @@ cmake-build-*/
 *.swp
 .DS_Store
 Thumbs.db
+
+# Nix build outputs
+/result
+/result-*
