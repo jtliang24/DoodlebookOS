@@ -15,6 +15,7 @@
   <a href="#key-features">Key Features</a> •
   <a href="#system-prerequisites">Prerequisites</a> •
   <a href="#installation">Installation</a> •
+  <a href="nix/README.md">Nix / Home Manager</a> •
   <a href="#switching-dark--light-mode">Usage</a> •
   <a href="#uninstallation--restoring-backups">Uninstall</a> •
   <a href="#roadmap-to-beta-v10">Roadmap</a>
